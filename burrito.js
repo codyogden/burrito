@@ -41,10 +41,19 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 		);
 	}
 
+	function logOut() {
+		localStorage.removeItem('trello-token');
+		localStorage.removeItem('trello-id');
+		window.location.reload();
+	}
+
 	// Run it, baby.
 	function runApp() {
 		ReactDOM.render(
-			[title({name: 'My Cards'}), assignedCards( { key: 'assigned', items: cards })],
+			[
+			title({name: 'My Cards'}),
+			assignedCards( { key: 'assigned', items: cards }),
+			ce('a', { key: 'logout-link', id: 'logout-link', onClick: logOut }, 'Log Out')],
 			document.getElementById('burrito-app')
 		);
 	}
