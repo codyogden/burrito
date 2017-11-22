@@ -71,7 +71,7 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 			res.json().then(function(data){
 				// Save the User's ID
 				localStorage.setItem( 'trello-id', data.id );
-				window.location.href = "/";
+				window.location.href = window.location.href.split('#')[0];
 			});
 		});
 	}
