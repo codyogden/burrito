@@ -36,10 +36,14 @@ li b + span {
 	display: block;
 }
 li b {
-	font-size: 1em;
+	font-size: 1.25em;
+	font-weight: normal;
+	line-height: 1.32;
 }
 li b + span {
 	font-size: 0.9em;
+	font-weight: lighter;
+	margin-top: 2px;
 }
 
 h1 {
