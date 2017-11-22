@@ -17,7 +17,7 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 		}).name;
 
 		return(
-			ce('a', { href: props.url, target: '_blank' }, ce('b', null, props.name), ce('span', null, boardName) )
+			ce('a', { href: props.url, tabIndex: 2, target: '_blank', 'aria-label': `Card: ${props.name} - Board: ${boardName}` }, ce('b', null, props.name), ce('span', null, boardName) )
 		);
 	}
 
@@ -30,14 +30,14 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 			});
 		}
 		return(
-			ce('ul', { key: props.key }, listItemsArr)
+			ce('ul', { 'tabIndex': 1, key: props.key, 'aria-label': 'Trello Cards to which you are assigned.', 'aria-live': 'polite', 'aria-relevant': 'additions removals', 'aria-atomic': 'true' }, listItemsArr)
 		);
 	}
 
 	// Create a title.
 	const title = function(props) {
 		return(
-			ce('h2', null, props.name )
+			ce('h2', { id: 'list-id' }, props.name )
 		);
 	}
 
@@ -53,7 +53,7 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 			[
 			title({name: 'My Cards'}),
 			assignedCards( { key: 'assigned', items: cards }),
-			ce('a', { key: 'logout-link', id: 'logout-link', onClick: logOut }, 'Log Out')],
+			ce('a', { key: 'logout-link', id: 'logout-link', onClick: logOut, href: '', 'aria-label': 'Log Out of Burrito' }, 'Log Out')],
 			document.getElementById('burrito-app')
 		);
 	}
@@ -87,7 +87,7 @@ if( localStorage.getItem('trello-token') && localStorage.getItem('trello-id') ) 
 	// If there is not a token.
 	ReactDOM.render(
 		// Show the Login link.
-		ce('a', { id: 'login', href: `https://trello.com/1/authorize?expiration=never&name=Burrito&key=${trelloAPIKey}&return_url=${window.location.href}&callback_method=harry` }, 'Login with Trello' ),
+		ce('a', { id: 'login', href: `https://trello.com/1/authorize?expiration=never&name=Burrito&key=${trelloAPIKey}&return_url=${window.location.href}`, 'aria-label': 'Login with Trello' }, 'Login with Trello' ),
 		document.getElementById('burrito-app')
 	);
 }
