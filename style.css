@@ -1,0 +1,43 @@
+body {
+	background-color: #FAFAFA;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	padding: 100px 0 300px 0;
+}
+a {
+	color: currentColor;
+	text-decoration: none;
+	display: block;
+	padding: 10px 10px;
+	box-sizing: border-box;
+}
+a:hover,
+a:focus {
+	background-color: #eee;
+}
+#login {
+	text-align: center;
+}
+#burrito-app {
+	margin: 0 auto;
+	width: 600px;
+	max-width: 90%;
+}
+h2 {
+	font-size: 1.5em;
+	margin-bottom: 5px;
+	border-bottom: 1px solid currentColor;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+li b + span {
+	display: block;
+}
+li b {
+	font-size: 1em;
+}
+li b + span {
+	font-size: 0.9em;
+}
