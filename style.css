@@ -50,15 +50,22 @@ li b + span {
 h1 {
 	font-size: 1em;
 	font-weight: normal;
-	position: absolute;
-	top: 10px;
-	left: 10px;
+	margin: 0;
+	padding: 0;
 }
 
-#about-link {
+#menu {
 	position: absolute;
 	top: 10px;
 	right: 10px;
+	display: flex;
+}
+
+#menu-left {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: flex;
 }
 
 #logout-link {
