@@ -5,9 +5,43 @@
   "repository": "git@github.com:codyogden/burrito.git",
   "author": "Cody Ogden <cody@codyogden.com>",
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js,jsx}\"",
+    "lint": "eslint **/*.{js,jsx} --quiet",
+    "build": "webpack",
+    "build:production": "webpack --optimize-minimize",
+    "watch": "webpack -w",
+    "dev": "webpack-dev-server"
+  },
   "dependencies": {
-    "normalize-css": "^2.3.1",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "normalize-scss": "^7.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "prettier": "^1.9.1",
+    "sass-loader": "^6.0.6",
+    "webpack-dev-server": "^2.9.7"
   }
 }
