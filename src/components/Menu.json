@@ -1,0 +1,12 @@
+[
+  {
+    "text": "About",
+    "url": "/about",
+    "internal": true
+  },
+  {
+    "text": "Github",
+    "url": "https://github.com/codyogden/burrito",
+    "internal": false
+  }
+]

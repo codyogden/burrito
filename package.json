@@ -9,7 +9,7 @@
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "build": "webpack",
-    "build:production": "webpack --optimize-minimize",
+    "build:production": "webpack -p",
     "watch": "webpack -w",
     "dev": "webpack-dev-server"
   },
@@ -17,6 +17,7 @@
     "normalize-scss": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "webpack": "^3.10.0"
   },
   "devDependencies": {

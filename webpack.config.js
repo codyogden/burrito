@@ -1,10 +1,10 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   context: __dirname,
   entry: './src/App.jsx',
-  devtool: 'cheap-eval-source-map',
   devServer: {
     publicPath: '/',
     historyApiFallback: true

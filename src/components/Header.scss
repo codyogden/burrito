@@ -1,0 +1,31 @@
+h1 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  padding: 5px;
+  color: #333;
+  a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    &:hover {
+      background-color: rgba(#333,0.1);
+    }
+  }
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
