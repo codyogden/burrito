@@ -10,11 +10,11 @@ const aboutPage = () => (
       <h2>About Burrito</h2>
       <p>
         {"Trello's"} mascot, Taco, sure is{' '}
-        <span style={{ 'border-bottom': 'dotted 1px #333' }} title="...said no one, ever.">
+        <span style={{ borderBottom: 'dotted 1px #333' }} title="...said no one, ever.">
           helpful.
         </span>{' '}
         This app takes some of {"Taco's"} most useful ingredients and wraps them up in a {'"get things done"'} shell to
-        make bring sanity to your insane trello workflow.
+        take control to your Trello workflow. Guac is extra.
       </p>
       <p className="credit">
         Created by{' '}

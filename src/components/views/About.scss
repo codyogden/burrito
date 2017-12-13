@@ -2,11 +2,9 @@
   width: 800px;
   max-width: 90%;
   margin: 0 auto;
+  padding-top: 20px;
   text-align: center;
-  height: calc( 100vh - 60px );
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: calc(100vh - 60px);
   a {
     color: currentColor;
     text-decoration: none;
@@ -23,7 +21,7 @@
   p {
     max-width: 50%;
     margin: 0 auto;
-    @media screen and ( max-width: 800px ) {
+    @media screen and (max-width: 800px) {
       max-width: 90%;
     }
     &.credit {

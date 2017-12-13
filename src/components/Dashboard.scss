@@ -1,0 +1,19 @@
+.dashboard-wrapper {
+  display: flex;
+  height: calc(100vh - 44px);
+  border-top: 1px solid rgba(#333, 0.5);
+}
+
+.dashboard-list-wrapper {
+  flex: 0 0 30%;
+  min-width: 300px;
+  overflow-y: scroll;
+  font-size: 1.25em;
+  border-right: 1px solid rgba(#333, 0.5);
+}
+
+.dashboard-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
