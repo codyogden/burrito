@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
-module.exports = {
+const config = {
   context: __dirname,
   entry: './src/App.jsx',
   devServer: {
@@ -55,3 +55,12 @@ module.exports = {
     ]
   }
 };
+
+if (process.env.ENV === 'production') {
+  config.resolve.alias = {
+    react: 'preact-compat',
+    'react-dom': 'preact-compat'
+  }
+}
+
+module.exports = config;

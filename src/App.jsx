@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import './App.scss';
 
-import Header from './components/default/Header';
-import aboutPage from './components/views/About';
-import Home from './components/views/Home';
+import Header from './components/template/Header';
+
+import HomePage from './pages/HomePage';
 
 import Dashboard from './components/Dashboard';
 
@@ -13,28 +14,42 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      token: false
+      userIsLoggedIn: false
     };
   }
   componentWillMount() {
-    if (window.location.href.split('=')[1] || localStorage.getItem('trello-token')) {
-      if (window.location.href.split('=')[1]) {
-        localStorage.setItem('trello-token', window.location.href.split('=')[1]);
-      }
-      this.setState({
-        token: localStorage.getItem('trello-token')
+    // TODO: Update burrito-trello to new version for next line to work, replaces following `if` block
+    // trelloAuthURL.captureToken();
+    if (window.location.href.split('=')[1]) {
+      const host = window.location.href.split('#')[0];
+      localStorage.setItem('burrito-token', window.location.href.split('=')[1]);
+      window.location.href = host;
+      return false;
+    }
+
+    if (localStorage.getItem('burrito-token')) {
+      return this.setState({
+        userIsLoggedIn: true
       });
     }
+
+    return true;
   }
   render() {
     return (
       <BrowserRouter>
         <div className="app">
-          <Header user={this.state.token !== null} />
+          <Header />
           <Switch>
-            <Route exact path="/" render={() => (this.state.token ? <Redirect to="/dashboard" /> : <Home />)} />
-            <Route exact path="/dashboard" render={() => (this.state.token ? <Dashboard /> : <Redirect to="/" />)} />
-            <Route exact path="/about" component={aboutPage} />
+            <Route
+              exact
+              path="/"
+              render={() => {
+                if (this.state.userIsLoggedIn) return <Dashboard />;
+                return <HomePage />;
+              }}
+            />
+            <Route exact path="/about" component={HomePage} />
           </Switch>
         </div>
       </BrowserRouter>
