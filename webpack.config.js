@@ -11,15 +11,20 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'style.css'
-    })
+      filename: 'style.css',
+      allChunks: true
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   output: {
     path: path.join(__dirname),
     filename: 'burrito.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      styles: path.resolve(__dirname, 'src/scss/')
+    }
   },
   stats: {
     colors: true,
@@ -29,18 +34,30 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract([
-          {
-            loader: 'css-loader',
-            options: { url: false }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [ 'node_modules/' ] }
-            }
-          ])
+        test: /(\.css|\.scss)$/,
+        use: ['css-hot-loader'].concat(
+          ExtractTextPlugin.extract({
+            use: [
+              {
+                loader: 'css-loader',
+                query: {
+                  modules: true,
+                  sourceMap: true,
+                  importLoaders: 2,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  url: false,
+                  includePaths: ['node_modules/'],
+                  sourceMap: true
+                }
+              }
+            ]
+          })
+        )
       },
       {
         enforce: 'pre',
@@ -57,10 +74,8 @@ const config = {
 };
 
 if (process.env.ENV === 'production') {
-  config.resolve.alias = {
-    react: 'preact-compat',
-    'react-dom': 'preact-compat'
-  }
+  config.resolve.alias.react = 'preact-compat';
+  config.resolve.alias['react-dom'] = 'preact-compat';
 }
 
 module.exports = config;

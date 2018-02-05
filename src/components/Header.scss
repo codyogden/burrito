@@ -1,0 +1,29 @@
+@import "~styles/global";
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  h1 {
+    @include fontSize(18px);
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    a {
+      color: currentColor;
+      text-decoration: none;
+      display: block;
+      padding: 5px 5px 5px 5px;
+      &:hover {
+        color: currentColor;
+      }
+    }
+  }
+}
+
+.headerActions {
+  display: flex;
+}

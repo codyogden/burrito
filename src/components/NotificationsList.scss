@@ -1,0 +1,51 @@
+@import "~styles/global/colors";
+
+.notifications {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notificationsContainer {
+  width: 450px;
+  background-color: $color-mist;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  max-height: 400px;
+  overflow: scroll;
+  z-index: 9999999999;
+}
+
+.notificationsList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  padding: 0 10px;
+}
+
+.notificationToggle {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read {
+  color: orange;
+}
+
+.unread {
+  color: pink;
+}
+
+.closed {
+  display: none;
+}

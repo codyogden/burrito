@@ -1,0 +1,87 @@
+.notificationsContainer {
+  display: inline;
+  position: relative;
+  @media screen and ( max-width: 600px) {
+    position: static;
+  }
+
+}
+
+.notificationsToggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  &.empty {
+    color: #333;
+  }
+  &.unread {
+    color: #CE393B;
+  }
+}
+
+.notifications {
+  display: none;
+}
+
+.notificationsActive {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #EDEDED;
+  border: 1px solid rgba(#999, 0.3);
+  width: 350px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  @media screen and ( max-width: 600px) {
+    top: 80px;
+    right: auto;
+    left: calc( ( 100vw - 350px ) / 2 );
+  }
+
+}
+
+.notificationsContainer {
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+
+
+.notificationsActions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(#333, 0.4);
+  margin-top: 5px;
+  padding-top: 5px;
+  &.empty {
+    display: none;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    color: rgba(#333, 0.4);
+    transition: color 200ms linear;
+    display: flex;
+    align-items: center;
+    span {
+      color: rgba(#333, 0);
+      transition: all 200ms linear;
+      font-size: 0.75em;
+      padding-right: 5px;
+    }
+
+    &:hover {
+      color: rgba(#333, 1);
+      cursor: pointer;
+      span {
+        color: rgba(#333, 1);
+        display: block;
+      }
+    }
+  }
+}

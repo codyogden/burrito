@@ -1,0 +1,29 @@
+.cardTitle {
+  width: 600px;
+  max-width: 95%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  a {
+    color: currentColor;
+    display: block;
+    text-decoration: none;
+    &:hover {
+      color: currentColor;
+    }
+    &:hover:after {
+      display: inline-block;;
+      content: 'sdf';
+    }
+  }
+  h2 {
+    font-size: 2em;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0;
+  }
+}

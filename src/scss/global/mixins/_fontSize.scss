@@ -1,0 +1,14 @@
+@mixin fontSize($size, $margins: true) {
+  font-size: $size;
+  line-height: $size + 8px;
+  @if ($margins) {
+    margin: 0.5em 0 0 0;
+  }
+  &.primary {
+    color: $color-black;
+  }
+  &.secondary,
+  &.sub-title {
+    color: $color-steam;
+  }
+}

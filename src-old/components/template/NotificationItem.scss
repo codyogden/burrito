@@ -1,0 +1,55 @@
+.notificationItem {
+    & + .notificationItem {
+      border-top: 1px solid #999;
+    }
+    border-radius: 3px;
+    padding: 10px 0px;
+    margin-bottom: 5px;
+    .notificationAvatar {
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-left: 5px;
+    }
+}
+
+.userNoAvatar {
+  background-color: #999999;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+
+.notificationMessage {
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  line-height: calc( 0.9em + 8px);
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+.notificationMeta {
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 5px 0px 5px;
+}
+
+.notificationCardInfo {
+  line-height: 15px;
+  order: -1;
+  text-align: right;
+}
+
+.userNoAvatar {
+
+}
+
+

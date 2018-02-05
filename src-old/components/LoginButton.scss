@@ -1,0 +1,22 @@
+.btn {
+  &.login {
+    $btnColor: #61BD4F;
+    background-color: $btnColor;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 2px;
+    font-size: 16px;
+    &:hover {
+      background-color:  #5AAC44;
+      transition: all 200ms linear;
+    }
+    &:active {
+      background: linear-gradient(135deg, $btnColor, rgba(darken($btnColor, 5%), 1));
+    }
+  }
+  &.small {
+    font-size: 0.75em;
+  }
+}

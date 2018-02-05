@@ -1,0 +1,12 @@
+.btn {
+  &.logout {
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.userMenu {
+  display: flex;
+}

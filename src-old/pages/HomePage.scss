@@ -1,0 +1,105 @@
+.HomePage {
+  .footerHome {
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+    a {
+      color: #666666;
+      text-decoration: none;
+      color: #8064A2;
+      &:hover {
+        border-bottom: 1px dotted currentColor;
+      }
+      &:visited {
+        color: #666666;
+      }
+    }
+  }
+  .featuresBannerContainer {
+    background-color: #8064A2;
+    color: #FAFAFA;
+  }
+  .featuresBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 900px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    list-style-type: none;
+    text-align: center;
+    li {
+      flex: 0 0 30%;
+      .feature-icon {
+        width: 30%;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    @media screen and ( max-width: 900px ) {
+      // display: block;
+      padding: 25px 0;
+      max-width: 98%;
+      width: 100%;
+      li {
+        margin: 25px 0;
+        padding: 25px 0;
+      }
+    }
+    @media screen and ( max-width: 750px ) {
+      display: block;
+      max-width: 90%;
+    }
+  }
+  .openSourceBanner {
+    text-align: center;
+    padding: 50px 0;
+    width: 400px;
+    margin: 0 auto;
+    max-width: 90%;
+    a {
+      color: #0079BF;
+      text-decoration: none;
+      border-bottom: 1px dotted currentColor;
+    }
+  }
+}
+
+.hero {
+  h2 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  p {
+    margin-top: 0;
+  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 40px 0 80px 0;
+  &>div {
+    flex: 0 0 50%;
+  }
+  @media screen and ( max-width: 900px) {
+    display: flex;
+    flex-flow: column-reverse;
+    text-align: center;
+  }
+}
+
+.GraphicMain {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.heroActions {
+  margin-top: 30px;
+}
