@@ -2,14 +2,16 @@
 The best ingredients of Trello in a wrapped in a minimally designed app.
 
 ## How to Use It
-1. Go to https://codyogden.github.io/burrito/ and click 'Login with Trello'.
+1. Go to https://burrito.work and click 'Login with Trello'.
 2. After logging in, you'll see all the cards assigned to you.
 3. Click the card to open it in a new window.
 4. Profit?
 
 ## Features
 - Minimal Design
-- Timed Refreshed / Automatic Updating
+- Automatic Updates on Notifications and your Assigned Cards
+- See notifications that matter and mark them as read.
+- Add new comments and @ mention other users with smart suggestions
 
 That's all the features for now.
 
