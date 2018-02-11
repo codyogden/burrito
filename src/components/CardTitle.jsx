@@ -3,16 +3,34 @@ import PropTypes from 'prop-types';
 
 import { cardTitle } from './CardTitle.scss';
 
+const CardLabels = props => <ul>{props.labels.map(label => <li key={label.id}>{label.name}</li>)}</ul>;
+
+CardLabels.propTypes = {
+  labels: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      color: PropTypes.string
+    })
+  ).isRequired
+};
+
 export default class CardTitle extends Component {
   constructor() {
     super();
     this.state = {};
   }
   render() {
-    return(
+    return (
       <header className={cardTitle}>
-        <h2><a target="_blank" href={this.props.card.shortUrl}>{this.props.card.name}</a></h2>
-        <h3><a target="_blank" href={this.props.board.shortUrl}>{this.props.board.name}</a></h3>
+        {/* <div className={styles.actions}>
+          
+        </div> */}
+        <h2>{this.props.card.name}</h2>
+        <h3>{this.props.board.name}</h3>
+        <div>
+          <CardLabels labels={this.props.card.labels} />
+        </div>
       </header>
     );
   }
@@ -21,7 +39,9 @@ export default class CardTitle extends Component {
 CardTitle.propTypes = {
   card: PropTypes.shape({
     name: PropTypes.string,
-    shortUrl: PropTypes.string
+    shortUrl: PropTypes.string,
+    url: PropTypes.string,
+    labels: CardLabels.propTypes.labels
   }).isRequired,
   board: PropTypes.shape({
     name: PropTypes.string,

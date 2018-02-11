@@ -12,13 +12,14 @@ export default class Comment extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props);
     return (
       <li className={styles.commentItem}>
-        <UserAvatar {...this.props.memberCreator} />
-        {this.props.memberCreator.fullName}
-        {this.props.data.text}
-        {moment(this.props.date).fromNow()}
+        <div className={styles.memberInfo}>
+          <UserAvatar {...this.props.memberCreator} />
+          <span className={styles.memberName}>{this.props.memberCreator.fullName}</span>
+        </div>
+        <div className={styles.commentText}>{this.props.data.text}</div>
+        <div className={styles.commentDate}>{moment(this.props.date).fromNow()}</div>
       </li>
     );
   }

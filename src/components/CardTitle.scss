@@ -5,25 +5,44 @@
   box-sizing: border-box;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
-  a {
-    color: currentColor;
-    display: block;
-    text-decoration: none;
-    &:hover {
-      color: currentColor;
-    }
-    &:hover:after {
-      display: inline-block;;
-      content: 'sdf';
-    }
-  }
+  //   h2 a,
+  //   h3 a {
+  //     color: currentColor;
+  //     display: block;
+  //     text-decoration: none;
+  //     .indicator {
+  //       display: none;
+  //       font-size: 0.8em;
+  //       padding: 0 0 0 8px;
+  //     };
+  //     &:hover {
+  //       color: currentColor;
+  //       .indicator {
+  //         display: inline-block;
+  //       }
+  //     }
+  //     .indicator {
+  //   display: none;
+  // }
+  //   }
   h2 {
     font-size: 2em;
-    margin-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 3px;
   }
   h3 {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: normal;
     margin: 0;
   }
+}
+
+.icon {
+  // margin-left: 8px;
+  font-size: 0.9em;
+}
+
+.actions {
+  text-align: right;
+  // float: right;
 }

@@ -2,14 +2,13 @@
 
 export class BurritoMD {
   constructor() {
-
     const header = (text, chars, content) => {
       const level = chars.length;
       return `${Array(level).join('#')} ${content.trim()}`;
     };
-    
+
     this.rules = [
-      { regex: /(#+)(.*)/g, replacement: header },                                         // headers
+      { regex: /(#+)(.*)/g, replacement: header } // headers
       // { regex: /!\[([^\[]+)\]\(([^\)]+)\)/g, replacement: '<img src=\'$2\' alt=\'$1\'>' }, // image
       // { regex: /\[([^\[]+)\]\(([^\)]+)\)/g, replacement: '<a href=\'$2\'>$1</a>' },        // hyperlink
       // { regex: /(\*\*|__)(.*?)\1/g, replacement: '<strong>$2</strong>' },                  // bold
@@ -30,7 +29,7 @@ export class BurritoMD {
 
   parse(text) {
     let string = `\n${text}\n`;
-    this.rules.forEach((rule) => {
+    this.rules.forEach(rule => {
       string = string.replace(rule.regex, rule.replacement);
     });
 

@@ -26,7 +26,7 @@ export default class App extends Component {
         <div>
           <BrowserRouter>
             <div>
-              <Header />
+              <Header idCard={this.state.idCard} />
               <Switch>
                 <Route exact path="/" component={Dashboard} />
                 <Route path="/:idCard" component={Card} />

@@ -12,7 +12,7 @@ export default class CardDesc extends Component {
     this.state = {};
   }
   render() {
-    return(
+    return (
       <div className={styles.cardDesc}>
         <ReactMarkdown source={markdown.parse(this.props.source)} />
       </div>

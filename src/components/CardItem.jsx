@@ -12,7 +12,7 @@ export default class CardItem extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.due);
+    // console.log(this.props.due);
     return (
       <li className={styles.item}>
         <Link className={styles.itemLink} to={`/${this.props.id}`} href={`/${this.props.id}`}>
@@ -35,10 +35,10 @@ CardItem.propTypes = {
   }).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  due: PropTypes.string
+  url: PropTypes.string.isRequired
+  // due: PropTypes.string
 };
 
 CardItem.defaultProps = {
-  due: null
+  // due: null
 };

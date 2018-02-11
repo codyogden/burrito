@@ -6,6 +6,17 @@ import CardList from '../components/CardList';
 
 import trello from '../Burrito';
 
+const styles = {
+  contain: {
+    maxWidth: '95%',
+    width: '600px',
+    margin: '0 auto',
+    boxSizing: 'border-box',
+    padding: '10px',
+    borderBottom: '1px solid #ccc'
+  }
+};
+
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -27,6 +38,7 @@ export default class Dashboard extends Component {
       return (
         <div>
           <main>
+            <h2 style={styles.contain}>My Cards</h2>
             <CardList cards={this.state.cards} boards={this.state.boards} />
           </main>
         </div>

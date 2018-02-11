@@ -1,3 +1,5 @@
+@import "~styles/global/colors";
+
 .item {
   max-width: 95%;
   width: 600px;
@@ -6,7 +8,6 @@
   padding-right: 40px;
   &:hover,
   &:focus-within {
-    background-color: #eee;
     .cardActions {
       opacity: 1;
     }
@@ -20,6 +21,7 @@
   color: currentColor;
   &:hover {
     color: currentColor;
+    background-color: rgba($color-mist, 0.55);
   }
 }
 
@@ -52,8 +54,8 @@
     background-color: #fafafa;
     &:hover,
     &:focus {
-      background-color: #eee;
-      border-left: 1px solid #ccc;
+      background-color: rgba($color-mist, 0.55);
+      // border-left: 1px solid #ccc;
     }
   }
   a {

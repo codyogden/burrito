@@ -15,7 +15,7 @@ export class MarkdownEngine {
     };
 
     this.rules = [
-      { regex: /(#+)(.*)/g, replacement: header },                                         // headers
+      { regex: /(#+)(.*)/g, replacement: header } // headers
       // { regex: /!\[([^\[]+)\]\(([^\)]+)\)/g, replacement: '<img src=\'$2\' alt=\'$1\'>' }, // image
       // { regex: /\[([^\[]+)\]\(([^\)]+)\)/g, replacement: '<a href=\'$2\'>$1</a>' },        // hyperlink
       // { regex: /(\*\*|__)(.*?)\1/g, replacement: '<strong>$2</strong>' },                  // bold
@@ -36,7 +36,7 @@ export class MarkdownEngine {
 
   parse(text) {
     let string = `\n${text}\n`;
-    this.rules.forEach((rule) => {
+    this.rules.forEach(rule => {
       string = string.replace(rule.regex, rule.replacement);
     });
 
@@ -46,6 +46,4 @@ export class MarkdownEngine {
 
 const markdown = new MarkdownEngine();
 
-export {
-  markdown
-}
+export { markdown };
