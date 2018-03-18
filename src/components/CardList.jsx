@@ -1,38 +1,44 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { cardList } from './CardList.scss';
+import Card from './Card';
+import Loading from './Loading';
 
-import CardItem from './CardItem';
+const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 50px auto 0 auto;
+  width: 600px;
+  max-width: 100%;
+`;
 
 export default class CardList extends Component {
   constructor() {
     super();
     this.state = {};
-    this.board = this.board.bind(this);
   }
-  board(idBoard) {
-    return this.props.boards.find(board => board.id === idBoard);
+  getBoardName(idBoard) {
+    return this.props.boards.find(item => item.id === idBoard).name;
   }
   render() {
-    return (
-      <ul className={cardList}>
-        {this.props.cards.map(card => <CardItem key={card.id} board={this.board(card.idBoard)} {...card} />)}
-      </ul>
-    );
+    if (this.props.cards.length) {
+      return (
+        <List>
+          {this.props.cards.map(card => <Card key={card.id} boardName={this.getBoardName(card.idBoard)} {...card} />)}
+        </List>
+      );
+    }
+    return <Loading />;
   }
 }
 
 CardList.propTypes = {
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.id,
-      idBoard: PropTypes.string
-    })
-  ).isRequired,
-  boards: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string
-    })
-  ).isRequired
+  cards: PropTypes.arrayOf(PropTypes.shape(Card.propTypes)),
+  boards: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, name: PropTypes.string }))
+};
+
+CardList.defaultProps = {
+  cards: [],
+  boards: []
 };

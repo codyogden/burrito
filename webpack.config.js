@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
@@ -13,8 +12,7 @@ const config = {
     new ExtractTextPlugin({
       filename: 'style.css',
       allChunks: true
-    }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    })
   ],
   output: {
     path: path.join(__dirname),
@@ -22,9 +20,7 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      styles: path.resolve(__dirname, 'src/scss/')
-    }
+    alias: {}
   },
   stats: {
     colors: true,
@@ -34,30 +30,20 @@ const config = {
   module: {
     rules: [
       {
-        test: /(\.css|\.scss)$/,
-        use: ['css-hot-loader'].concat(
-          ExtractTextPlugin.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                query: {
-                  modules: true,
-                  sourceMap: true,
-                  importLoaders: 2,
-                  localIdentName: '[name]__[local]___[hash:base64:5]'
-                }
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  url: false,
-                  includePaths: ['node_modules/'],
-                  sourceMap: true
-                }
+        test: /(\.css)$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                sourceMap: true,
+                importLoaders: 2,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
               }
-            ]
-          })
-        )
+            }
+          ]
+        })
       },
       {
         enforce: 'pre',

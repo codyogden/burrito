@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'normalize.css';
 
-import './App.scss';
+import trello from './Burrito';
+import { CardList, LoginButton, Header } from './components';
 
-import { Dashboard, Card } from './containers';
-import { HomePage, FeaturesPage } from './components/pages';
-import Header from './components/Header';
+import './style.css';
 
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      userToken: false,
+      cards: [],
+      boards: []
+    };
   }
   componentWillMount() {
     if (localStorage.getItem('burrito-token')) {
       this.setState({
         userToken: localStorage.getItem('burrito-token')
       });
+      this.refreshList();
     }
+  }
+  refreshList() {
+    trello
+      .members('me')
+      .boards()
+      .then(boards => {
+        this.setState({ boards });
+        trello
+          .members('me')
+          .cards()
+          .then(cards => {
+            this.setState({ cards });
+          });
+      });
   }
   render() {
     if (this.state.userToken) {
@@ -26,10 +45,9 @@ export default class App extends Component {
         <div>
           <BrowserRouter>
             <div>
-              <Header idCard={this.state.idCard} />
+              <Header />
               <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/:idCard" component={Card} />
+                <Route exact path="/" render={() => <CardList boards={this.state.boards} cards={this.state.cards} />} />
               </Switch>
             </div>
           </BrowserRouter>
@@ -39,10 +57,19 @@ export default class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/features" component={FeaturesPage} />
-          </Switch>
+          <div>
+            <Header />
+            <Switch>
+              <Route
+                path="/"
+                render={() => (
+                  <div>
+                    <LoginButton color="grass">Login With Trello</LoginButton>
+                  </div>
+                )}
+              />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );
@@ -51,6 +78,7 @@ export default class App extends Component {
 
 // If a user is being authenticated.
 if (window.location.href.split('=')[1]) {
+  // Ensure that token is valid.
   // Store their token
   localStorage.setItem('burrito-token', window.location.href.split('=')[1]);
   // Redirect them to the home page

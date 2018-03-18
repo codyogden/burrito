@@ -1,5 +1,5 @@
 # Burrito
-The best ingredients of Trello in a wrapped in a minimally designed app.
+All your assigned Trello cards wrapped up in a warm shell.
 
 ## How to Use It
 1. Go to https://burrito.work and click 'Login with Trello'.
@@ -10,7 +10,6 @@ The best ingredients of Trello in a wrapped in a minimally designed app.
 ## Features
 - Minimal Design
 - Automatic Updates on Notifications and your Assigned Cards
-- See notifications that matter and mark them as read.
 - Add new comments and @ mention other users with smart suggestions
 
 That's all the features for now.
