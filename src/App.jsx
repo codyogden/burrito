@@ -16,6 +16,7 @@ export default class App extends Component {
       cards: [],
       boards: []
     };
+    this.refreshList = this.refreshList.bind(this);
   }
   componentWillMount() {
     if (localStorage.getItem('burrito-token')) {
@@ -25,19 +26,13 @@ export default class App extends Component {
       this.refreshList();
     }
   }
+  componentDidMount() {
+    this.interval = setInterval(this.refreshList, 2000);
+  }
   refreshList() {
-    trello
-      .members('me')
-      .boards()
-      .then(boards => {
-        this.setState({ boards });
-        trello
-          .members('me')
-          .cards()
-          .then(cards => {
-            this.setState({ cards });
-          });
-      });
+    trello.batch(['/members/me/cards', '/members/me/boards'])
+      .then(data => this.setState({ cards: data[0][200], boards: data[1][200] }))
+      .catch(error => console.log(error));
   }
   render() {
     if (this.state.userToken) {

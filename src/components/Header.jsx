@@ -46,7 +46,7 @@ const menuItems = () => {
   const itemsArr = [];
   // Always Included
   itemsArr.push(
-    <li>
+    <li key="github">
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -61,7 +61,7 @@ const menuItems = () => {
   // Included for Users
   if (localStorage.getItem('burrito-token')) {
     itemsArr.push(
-      <li>
+      <li key="logout">
         <LogoutButton />
       </li>
     );
