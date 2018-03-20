@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TrelloTokenAuth } from 'burrito-trello';
+import styled from 'styled-components';
 
 import appConfig from '../../config.json';
+
+const Button = styled.a`
+  background-color: #54a654;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+`;
 
 export default class LoginButton extends Component {
   constructor(props) {
@@ -27,9 +36,9 @@ export default class LoginButton extends Component {
   }
   render() {
     return (
-      <a href={this.state.authURL} className={[this.props.color, ...this.props.className].join(' ')}>
+      <Button href={this.state.authURL} className={[this.props.color, ...this.props.className].join(' ')}>
         {this.props.children}
-      </a>
+      </Button>
     );
   }
 }

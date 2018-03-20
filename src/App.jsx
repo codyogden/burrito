@@ -4,7 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import 'normalize.css';
 
 import trello from './Burrito';
-import { CardList, LoginButton, Header } from './components';
+import { CardList, Header } from './components';
+import AboutPage from './page/About';
 
 import './style.css';
 
@@ -30,9 +31,9 @@ export default class App extends Component {
     this.interval = setInterval(this.refreshList, 2000);
   }
   refreshList() {
-    trello.batch(['/members/me/cards', '/members/me/boards'])
-      .then(data => this.setState({ cards: data[0][200], boards: data[1][200] }))
-      .catch(error => console.log(error));
+    trello
+      .batch(['/members/me/cards', '/members/me/boards'])
+      .then(data => this.setState({ cards: data[0][200], boards: data[1][200] }));
   }
   render() {
     if (this.state.userToken) {
@@ -53,16 +54,8 @@ export default class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
             <Switch>
-              <Route
-                path="/"
-                render={() => (
-                  <div>
-                    <LoginButton color="grass">Login With Trello</LoginButton>
-                  </div>
-                )}
-              />
+              <Route exact path="/" component={AboutPage} />
             </Switch>
           </div>
         </BrowserRouter>
