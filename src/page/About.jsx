@@ -64,8 +64,8 @@ export default class AboutPage extends Component {
           <div>
             <h1>Burrito</h1>
             <p>
-              Burrito brings together your cards from Trello and serves them wrapped up in a warm {`"get things done"`}{' '}
-              shell. Guac is extra, of course.
+              Burrito collects your cards from Trello and serves them wrapped up in a warm {`"get things done"`} shell.
+              Guac is extra, of course.
             </p>
             <div className="button-container">
               <LoginButton>Login with Trello</LoginButton>
