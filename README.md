@@ -9,8 +9,7 @@ All your assigned Trello cards wrapped up in a warm shell.
 
 ## Features
 - Minimal Design
-- Automatic Updates on Notifications and your Assigned Cards
-- Add new comments and @ mention other users with smart suggestions
+- Auto Refresh
 
 That's all the features for now.
 
