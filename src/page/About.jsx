@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
 import LoginButton from '../components/LoginButton';
+import OpenSourceButton from '../components/OpenSourceButton';
 
 import './About.css';
 
@@ -26,6 +29,11 @@ const Row = styled.div`
   }
   .button-container {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    .btn-icon {
+      margin-right: 15px;
+    }
   }
   @media screen and (max-width: 900px) {
     flex-flow: column nowrap;
@@ -69,6 +77,7 @@ export default class AboutPage extends Component {
             </p>
             <div className="button-container">
               <LoginButton>Login with Trello</LoginButton>
+              <OpenSourceButton><FontAwesomeIcon icon={faGithub} className="btn-icon" />Open Source</OpenSourceButton>
             </div>
           </div>
         </Row>
