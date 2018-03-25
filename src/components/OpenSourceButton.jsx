@@ -17,9 +17,12 @@ export default class LoginButton extends Component {
   }
   render() {
     return (
-      <Button target="_blank"
+      <Button
+        target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/codyogden/burrito" className={[this.props.color, ...this.props.className].join(' ')}>
+        href="https://github.com/codyogden/burrito"
+        className={[this.props.color, ...this.props.className].join(' ')}
+      >
         {this.props.children}
       </Button>
     );

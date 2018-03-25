@@ -77,7 +77,9 @@ export default class AboutPage extends Component {
             </p>
             <div className="button-container">
               <LoginButton>Login with Trello</LoginButton>
-              <OpenSourceButton><FontAwesomeIcon icon={faGithub} className="btn-icon" />Open Source</OpenSourceButton>
+              <OpenSourceButton>
+                <FontAwesomeIcon icon={faGithub} className="btn-icon" />Open Source
+              </OpenSourceButton>
             </div>
           </div>
         </Row>
