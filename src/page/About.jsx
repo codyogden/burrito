@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
 import LoginButton from '../components/LoginButton';
+import ButtonLink from '../components/ButtonLink';
 
 import './About.css';
 
@@ -26,6 +29,11 @@ const Row = styled.div`
   }
   .button-container {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    .btn-icn {
+      margin-right: 15px;
+    }
   }
   @media screen and (max-width: 900px) {
     flex-flow: column nowrap;
@@ -69,6 +77,14 @@ export default class AboutPage extends Component {
             </p>
             <div className="button-container">
               <LoginButton>Login with Trello</LoginButton>
+              <ButtonLink
+                href="https://github.com/codyogden/burrito"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Burrito on Github"
+              >
+                <FontAwesomeIcon icon={faGithub} className="btn-icn" />Open Source
+              </ButtonLink>
             </div>
           </div>
         </Row>
