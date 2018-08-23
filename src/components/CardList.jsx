@@ -26,13 +26,13 @@ export default class CardList extends Component {
     if (this.props.success && this.props.cards.length) {
       return (
         <List>
-          {this.props.cards.map(card => <Card key={card.id} boardName={this.getBoardName(card.idBoard)} {...card} />)}
+          {this.props.cards.map(card => (
+            <Card key={card.id} boardName={this.getBoardName(card.idBoard)} {...card} />
+          ))}
         </List>
       );
     } else if (this.props.success && !this.props.cards.length) {
-      return (
-        <EmptyList />
-      );
+      return <EmptyList />;
     }
     return <Loading />;
   }

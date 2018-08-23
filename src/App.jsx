@@ -44,7 +44,13 @@ export default class App extends Component {
             <div>
               <Header />
               <Switch>
-                <Route exact path="/" render={() => <CardList boards={this.state.boards} cards={this.state.cards} success={this.state.success} />} />
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <CardList boards={this.state.boards} cards={this.state.cards} success={this.state.success} />
+                  )}
+                />
               </Switch>
             </div>
           </BrowserRouter>

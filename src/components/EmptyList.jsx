@@ -23,22 +23,38 @@ const noCardItems = [
   {
     key: 'nachos',
     url: 'assets/nachos.svg',
-    pun: <div>To Do List? Nacho problem! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small></div>,
+    pun: (
+      <div>
+        To Do List? Nacho problem! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small>
+      </div>
+    )
   },
   {
     key: 'guac',
     url: 'assets/guacamole.svg',
-    pun: <div>A wild guac appeared! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small></div>,
+    pun: (
+      <div>
+        A wild guac appeared! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small>
+      </div>
+    )
   },
   {
     key: 'taco',
     url: 'assets/taco.svg',
-    pun: <div>Taco-bout productivity! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small></div>,
+    pun: (
+      <div>
+        Taco-bout productivity! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small>
+      </div>
+    )
   },
   {
     key: 'burrito',
     url: 'assets/burrito.svg',
-    pun: <div>Bonus burrito! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small></div>,
+    pun: (
+      <div>
+        Bonus burrito! <small style={{ display: 'block', 'padding-top': '5px' }}>No cards here.</small>
+      </div>
+    )
   }
 ];
 
@@ -55,7 +71,7 @@ export default class EmptyList extends Component {
     this.setState(noCardItems[Math.floor(Math.random() * noCardItems.length)]);
   }
   render() {
-    return(
+    return (
       <EmptyCardList id={this.state.key} className="empty-card-list">
         <EmptyCardImg src={this.state.url} alt={this.state.pun} />
         <PunContainer>{this.state.pun}</PunContainer>
