@@ -1,6 +1,6 @@
 {
   "name": "burrito",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "main": "index.js",
   "repository": "git@github.com:codyogden/burrito.git",
   "author": "Cody Ogden <cody@codyogden.com>",
