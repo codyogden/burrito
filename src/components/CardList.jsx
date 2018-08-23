@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Card from './Card';
 import Loading from './Loading';
+import EmptyList from './EmptyList';
 
 const List = styled.ul`
   list-style-type: none;
@@ -22,11 +23,15 @@ export default class CardList extends Component {
     return this.props.boards.find(item => item.id === idBoard).name;
   }
   render() {
-    if (this.props.cards.length) {
+    if (this.props.success && this.props.cards.length) {
       return (
         <List>
           {this.props.cards.map(card => <Card key={card.id} boardName={this.getBoardName(card.idBoard)} {...card} />)}
         </List>
+      );
+    } else if (this.props.success && !this.props.cards.length) {
+      return (
+        <EmptyList />
       );
     }
     return <Loading />;
@@ -35,6 +40,7 @@ export default class CardList extends Component {
 
 CardList.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(Card.propTypes)),
+  success: PropTypes.bool.isRequired,
   boards: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, name: PropTypes.string }))
 };
 
