@@ -14,6 +14,7 @@ export default class App extends Component {
     super();
     this.state = {
       userToken: false,
+      success: false,
       cards: [],
       boards: []
     };
@@ -33,7 +34,7 @@ export default class App extends Component {
   refreshList() {
     trello
       .batch(['/members/me/cards', '/members/me/boards'])
-      .then(data => this.setState({ cards: data[0][200], boards: data[1][200] }));
+      .then(data => this.setState({ cards: data[0][200], boards: data[1][200], success: true }));
   }
   render() {
     if (this.state.userToken) {
@@ -43,7 +44,13 @@ export default class App extends Component {
             <div>
               <Header />
               <Switch>
-                <Route exact path="/" render={() => <CardList boards={this.state.boards} cards={this.state.cards} />} />
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <CardList boards={this.state.boards} cards={this.state.cards} success={this.state.success} />
+                  )}
+                />
               </Switch>
             </div>
           </BrowserRouter>

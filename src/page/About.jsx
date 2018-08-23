@@ -83,7 +83,8 @@ export default class AboutPage extends Component {
                 rel="noopener noreferrer"
                 title="Burrito on Github"
               >
-                <FontAwesomeIcon icon={faGithub} className="btn-icn" />Open Source
+                <FontAwesomeIcon icon={faGithub} className="btn-icn" />
+                Open Source
               </ButtonLink>
             </div>
           </div>
