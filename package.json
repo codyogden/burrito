@@ -1,6 +1,6 @@
 {
   "name": "burrito",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "main": "index.js",
   "repository": "git@github.com:codyogden/burrito.git",
   "author": "Cody Ogden <cody@codyogden.com>",
@@ -57,7 +57,7 @@
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "prettier": "^1.9.1",
-    "serve": "^6.4.9",
+    "serve": "10.0.0",
     "webpack-dev-server": "^2.9.7"
   }
 }
