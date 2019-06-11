@@ -28,7 +28,7 @@
     "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
+    "react": "^16.8.6",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.3",
