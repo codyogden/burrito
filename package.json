@@ -26,7 +26,7 @@
     "lodash": "^4.17.11",
     "normalize.css": "^5.0.0",
     "preact": "^8.2.7",
-    "preact-compat": "^3.17.0",
+    "preact-compat": "^3.18.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
