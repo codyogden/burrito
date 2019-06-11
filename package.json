@@ -21,7 +21,7 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.5",
     "@fortawesome/react-fontawesome": "^0.0.17",
-    "burrito-trello": "0.1.6",
+    "burrito-trello": "0.1.8",
     "css-loader": "^0.28.10",
     "normalize.css": "^5.0.0",
     "preact": "^8.2.7",

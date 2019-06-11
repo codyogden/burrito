@@ -1235,9 +1235,10 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
-burrito-trello@0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/burrito-trello/-/burrito-trello-0.1.6.tgz#57339fac40fa2e0a0948ada84e3dc191b15c3ad7"
+burrito-trello@0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/burrito-trello/-/burrito-trello-0.1.8.tgz#5eac0df2af322307bb24112b272f6b64e220d12e"
+  integrity sha512-ZKoMbUJTRbvamlqlo4UiQ/fJ1NLRPGBLDPG6Bm1Zlvg92wPSb3PVjdr868tEJrYXYQeGmGEptWdI1TNR6ePvIA==
   dependencies:
     axios "^0.17.1"
 
