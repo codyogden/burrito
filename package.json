@@ -22,7 +22,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.5",
     "@fortawesome/react-fontawesome": "^0.0.17",
     "burrito-trello": "0.1.6",
-    "css-loader": "^0.28.10",
+    "css-loader": "^3.0.0",
     "lodash": "^4.17.11",
     "normalize.css": "^5.0.0",
     "preact": "^8.2.7",
