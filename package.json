@@ -24,7 +24,7 @@
     "burrito-trello": "0.1.6",
     "css-loader": "^0.28.10",
     "lodash": "^4.17.11",
-    "normalize.css": "^5.0.0",
+    "normalize.css": "^8.0.1",
     "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
     "prop-types": "^15.6.0",
