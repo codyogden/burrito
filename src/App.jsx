@@ -20,6 +20,7 @@ export default class App extends Component {
     };
     this.refreshList = this.refreshList.bind(this);
   }
+
   componentWillMount() {
     if (localStorage.getItem('burrito-token')) {
       this.setState({
@@ -28,29 +29,27 @@ export default class App extends Component {
       this.refreshList();
     }
   }
+
   componentDidMount() {
     this.interval = setInterval(this.refreshList, 2000);
   }
+
   refreshList() {
     trello
       .batch(['/members/me/cards', '/members/me/boards'])
       .then(data => this.setState({ cards: data[0][200], boards: data[1][200], success: true }));
   }
+
   render() {
-    if (this.state.userToken) {
+    const { boards, cards, success, userToken } = this.state;
+    if (userToken) {
       return (
         <div>
           <BrowserRouter>
             <div>
               <Header />
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() => (
-                    <CardList boards={this.state.boards} cards={this.state.cards} success={this.state.success} />
-                  )}
-                />
+                <Route exact path="/" render={() => <CardList boards={boards} cards={cards} success={success} />} />
               </Switch>
             </div>
           </BrowserRouter>
