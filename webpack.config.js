@@ -1,67 +1,71 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const config = {
-  context: __dirname,
-  entry: './src/App.jsx',
-  devServer: {
-    publicPath: '/',
-    historyApiFallback: true
-  },
-  plugins: [
-    new ExtractTextPlugin({
-      filename: 'style.css',
-      allChunks: true
-    })
-  ],
-  output: {
-    path: path.join(__dirname),
-    filename: 'burrito.js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {}
-  },
-  stats: {
-    colors: true,
-    reasons: true,
-    chunks: true
-  },
-  module: {
-    rules: [
-      {
-        test: /(\.css)$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              query: {
-                modules: true,
-                sourceMap: true,
-                importLoaders: 2,
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
-          ]
-        })
+const webpackHTML = require('./webpack.html');
+const packageJson = require('./package.json');
+
+module.exports = (env, argv) => {
+  const config = {
+    entry: './src/index.js',
+    output: {
+      path: path.resolve(__dirname, 'public'),
+      publicPath: '/',
+      filename: '[name].js',
+    },
+    module: {
+      rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
-        test: /\.jsx?$/,
-        loader: 'babel-loader'
-      }
-    ]
+        test: /\.(png|jpg|gif|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/[name].[ext]',
+          },
+        },
+      },
+      ],
+    },
+    resolve: {
+      extensions: ['*', '.js', '.jsx'],
+      alias: {},
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new HTMLWebpackPlugin(webpackHTML),
+      new webpack.DefinePlugin({
+        __NAME__: JSON.stringify(packageJson.name),
+      }),
+    ],
+    devServer: {
+      contentBase: './public',
+      hot: true,
+    },
+  };
+
+  // Use Preact in production
+  if (argv.mode === 'production') {
+    config.resolve.alias.react = 'preact-compat';
+    config.resolve.alias['react-dom'] = 'preact-compat';
   }
+
+  return config;
 };
-
-if (process.env.ENV === 'production') {
-  config.resolve.alias.react = 'preact-compat';
-  config.resolve.alias['react-dom'] = 'preact-compat';
-}
-
-module.exports = config;

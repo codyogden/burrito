@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "plugins": [
+    "json"
+  ],
+  "rules": {
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        }
+      }
+    ]
+  },
+  "globals": {
+    "__NAME__": true
+  }
+}
