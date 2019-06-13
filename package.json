@@ -43,6 +43,6 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server",
     "lint": "eslint \"src/**/**.{js,jsx}\"",
-    "test": "echo \"No testing specified.\""
+    "test": "yarn lint && yarn build"
   }
 }
