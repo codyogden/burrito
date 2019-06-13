@@ -13,6 +13,7 @@
     "@types/prop-types": "^15.7.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.3",
@@ -27,10 +28,15 @@
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/pro-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "burrito-trello": "^0.2.0",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.1"
   },
   "scripts": {

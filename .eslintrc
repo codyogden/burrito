@@ -24,6 +24,7 @@
     ]
   },
   "globals": {
-    "__NAME__": true
+    "__NAME__": true,
+    "__TRELLO_API_KEY__": true
   }
 }

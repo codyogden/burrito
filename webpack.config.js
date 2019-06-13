@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -53,11 +54,13 @@ module.exports = (env, argv) => {
       new HTMLWebpackPlugin(webpackHTML),
       new webpack.DefinePlugin({
         __NAME__: JSON.stringify(packageJson.name),
+        __TRELLO_API_KEY__: JSON.stringify(process.env.TRELLO_API_KEY),
       }),
     ],
     devServer: {
       contentBase: './public',
       hot: true,
+      historyApiFallback: true,
     },
   };
 
