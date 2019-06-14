@@ -1,13 +1,20 @@
-import React from 'react';
-import { logout } from '../../Burrito';
+import React, { Component } from 'react';
 
-const Dashboard = () => (
-  <>
-    <div>Hello, User!</div>
-    <div>
-      <button onClick={logout} type="button">Logout</button>
-    </div>
-  </>
-);
+import Navbar from './Navbar';
+
+class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <>
+        <Navbar />
+      </>
+    );
+  }
+}
 
 export default Dashboard;
