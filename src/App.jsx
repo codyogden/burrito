@@ -6,6 +6,8 @@ import Dashboard from './components/Dashboard';
 import Loader from './components/Loader';
 import Home from './components/Home';
 
+import './global.scss';
+
 /**
  * <App />
  */
