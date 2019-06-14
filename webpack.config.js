@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const webpackHTML = require('./webpack.html');
@@ -56,6 +57,9 @@ module.exports = (env, argv) => {
         __NAME__: JSON.stringify(packageJson.name),
         __TRELLO_API_KEY__: JSON.stringify(process.env.TRELLO_API_KEY),
       }),
+      new CopyPlugin([
+        { from: './.netlify/_redirects', to: './' },
+      ]),
     ],
     devServer: {
       contentBase: './public',
