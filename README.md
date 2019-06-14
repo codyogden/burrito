@@ -15,7 +15,7 @@ Let's face it! Trello is an amazing tool, but it can quickly become a nightmare 
 Burrito takes the cards to which you've been assigned and puts them in a simple, "to do" style list. You can search, filter by date, last activity, or alphabetically, and click to a specific Trello card without distracting boards or notifications.
 
 ## We're Open Source
-We respect that Trello holds sensitive data for your company. To ensure your privacy is respected, we've made our entire tool open source. We do not run any type of analytics or user behavior tracking in our project. You or your organization are free to run your own copy. See [Running Locally](#Running_Locally) for more information.
+We respect that Trello holds sensitive data for your company. To ensure your privacy is respected, we've made our entire tool open source. We do not run any type of analytics or user behavior tracking in our project. You or your organization are free to run your own copy. See [Running Locally](#running-locally) for more information.
 
 ## Running Locally
 A few notes about running locally:
