@@ -1,0 +1,2 @@
+- [ ] Update Travis CI badge before launch.
+- [ ] Remove TODO.md
