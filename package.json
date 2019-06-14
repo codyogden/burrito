@@ -44,6 +44,7 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server",
     "lint": "eslint \"src/**/**.{js,jsx}\"",
-    "test": "yarn lint && yarn build"
+    "test": "yarn lint && yarn build",
+    "local": "yarn build && npx http-server public/ -o"
   }
 }
