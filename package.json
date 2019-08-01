@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/pro-solid-svg-icons": "^5.9.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.10.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "burrito-trello": "^0.2.0",
     "preact": "10.0.0-beta.2",
